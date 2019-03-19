@@ -20,8 +20,11 @@ class BuyHandler(tornado.web.RequestHandler):
 if __name__ == "__main__":
     app = tornado.web.Application([
         (r"/", IndexHandler),
-         (r"/story/([0-9]+)", IndexHandler)
+        (r"/story/([0-9]+)", StoryHandler)
     ])
-    print("123123")
-    app.listen(8000)
+    app.add_handlers('shuaige.com', [
+        (r'/', BuyHandler)
+    ])
+    # print("123123")
+    app.listen(80)
     tornado.ioloop.IOLoop.instance().start()

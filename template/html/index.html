@@ -1,0 +1,16 @@
+{% extends  'layout.html' %}
+{% block CSS %}
+    <link href="{{static_url("css/index.css")}}" rel="stylesheet" />
+{% end %}
+
+{% block RenderBody %}
+<h1>Index</h1>
+<ul>
+    {% for item in list_info %}
+    <li>{{item}}</li>
+    {% end %}
+</ul>
+{% end %}
+
+{% block JavaScript %}`
+{% end %}
